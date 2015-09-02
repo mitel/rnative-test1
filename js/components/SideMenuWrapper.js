@@ -4,10 +4,18 @@ const { connect } = require('react-redux/native');
 const SideMenu = require('react-native-side-menu');
 const SideMenuContent = require('./SideMenuContent');
 const { toggleSideMenu } = require('../flux/Actions');
+const { WallSideMenu, PeopleSideMenu, MessagingSideMenu } = require('../views');
 
 
 function mapStateToProps(state) {
-  return { isSideMenuClosed: state.sideMenu.closed };
+  return { 
+    // future use
+    isSideMenuClosed: state.sideMenu.closed, 
+    
+    // using this to decide which side menu content to load, 
+    // based on the selected tab
+    selectedTab: state.currentTab, 
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -20,9 +28,9 @@ function mapDispatchToProps(dispatch) {
   A higher-order component is just a function that takes an existing component 
   and returns another component that wraps it.
   usage: 
-    export SideMenuWrapper
-    const App_after = SideMenuWrapper(App_before)
-    <App_after />
+    export sideMenuWrapper from this file
+    const App_after = sideMenuWrapper(App_before) where you want to use it
+    <App_after /> in JSX
 
   https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775
   https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750
@@ -32,18 +40,20 @@ const sidebarHOC = WrappedComponent => React.createClass({
 
   propTypes: {
     isSideMenuClosed: React.PropTypes.bool,
+    selectedTab: React.PropTypes.string,
     toggleSideMenu: React.PropTypes.func,
   },
   
   render() {
 
-    // TODO: each tab will have a diferent side menu content so at some point
-    // this will be part of the state
-    const menuContent = <SideMenuContent />;
+    const { isSideMenuClosed, toggleSideMenu, selectedTab } = this.props; // eslint-disable-line no-shadow
     
-    const { isSideMenuClosed, toggleSideMenu } = this.props; // eslint-disable-line no-shadow
-
-    console.info('is closed ' + isSideMenuClosed);
+    let menuContent;
+    if (selectedTab === 'wall') menuContent = <WallSideMenu />;
+    if (selectedTab === 'people') menuContent = <PeopleSideMenu />;
+    if (selectedTab === 'messaging') menuContent = <MessagingSideMenu />;
+    
+    // console.info('side menu is closed: ' + isSideMenuClosed);
 
     const sidebarProps = {
       menu: menuContent, // a component that gets loaded inside the SideMenu
