@@ -50,5 +50,5 @@ const app = React.createClass({
 });
 
 AppRegistry.registerComponent('test1', () => app);
-AppRegistry.registerComponent('main', () => app);
+AppRegistry.registerComponent('main', () => app); // for Exponent.js
 
