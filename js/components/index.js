@@ -1,2 +1,2 @@
 exports.TabsController = require('./TabsController');
-exports.SideMenuWrapper = require('./SideMenuWrapper');
+exports.sideMenuWrapper = require('./sideMenuWrapper');

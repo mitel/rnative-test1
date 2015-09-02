@@ -25,8 +25,6 @@ project.xcworkspace
 
 # node.js
 #
-node_modules/**
-dist-server/**
 npm-debug.log
 =======
 # Logs
@@ -56,4 +54,5 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+dist-server/**
 >>>>>>> 376c976c6b2410a1e5cd1910aad0c718e93a1cc2

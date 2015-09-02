@@ -2,6 +2,7 @@
   "name": "test1",
   "version": "0.0.1",
   "private": true,
+  "main": "index.ios.js",
   "scripts": {
     "start": "node_modules/react-native/packager/packager.sh",
     "watch-server": "webpack --verbose --colors --display-error-details --watch --config webpack.config-server.js && webpack-dev-server --config webpack.config-server.js",
@@ -14,7 +15,7 @@
     "good": "^6.3.0",
     "good-console": "^5.0.3",
     "good-file": "^5.0.1",
-    "hapi": "^9.0.3",
+    "hapi": "^9.0.4",
     "immutable": "^3.7.4",
     "lodash": "^3.10.1",
     "qs": "^5.0.0",

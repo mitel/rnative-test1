@@ -10,7 +10,7 @@ const {
 } = React;
 
 const window = Dimensions.get('window');
-const uri = 'http://pickaface.net/includes/themes/clean/img/slide2.png';
+const uri = 'http://pickaface.net/avatar/EduardoLoc55e5fbe1b4948.png';
 
 const styles = StyleSheet.create({
   menu: {
@@ -50,7 +50,7 @@ class SideMenuContent extends Component {
           <Image
             style={styles.avatar}
             source={{ uri }}/>
-          <Text style={styles.name}>Your name</Text>
+          <Text style={styles.name}>V2 user :)</Text>
         </View>
 
         <Text style={styles.item}>About</Text>

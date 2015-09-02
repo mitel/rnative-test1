@@ -19,12 +19,16 @@ function mapDispatchToProps(dispatch) {
 /*
   A higher-order component is just a function that takes an existing component 
   and returns another component that wraps it.
+  usage: 
+    export SideMenuWrapper
+    const App_after = SideMenuWrapper(App_before)
+    <App_after />
 
   https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775
   https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750
 */
 
-const SidebarHOC = WrappedComponent => React.createClass({
+const sidebarHOC = WrappedComponent => React.createClass({
 
   propTypes: {
     isSideMenuClosed: React.PropTypes.bool,
@@ -33,17 +37,18 @@ const SidebarHOC = WrappedComponent => React.createClass({
   
   render() {
 
-    // TODO: fiecare tab are propriul sidebar content. deci in functie de locatie, trebuie sa
-    // incarc o componenta specifica 
+    // TODO: each tab will have a diferent side menu content so at some point
+    // this will be part of the state
     const menuContent = <SideMenuContent />;
+    
     const { isSideMenuClosed, toggleSideMenu } = this.props; // eslint-disable-line no-shadow
 
     console.info('is closed ' + isSideMenuClosed);
 
     const sidebarProps = {
-      menu: menuContent,
-      open: isSideMenuClosed,
-      onChange: toggleSideMenu,
+      menu: menuContent, // a component that gets loaded inside the SideMenu
+      closedStatus: isSideMenuClosed, // added here for future use
+      onChange: toggleSideMenu, // callback that runs whenever the side menu changes state
     };
     
     return (
@@ -55,9 +60,9 @@ const SidebarHOC = WrappedComponent => React.createClass({
 
 });
 
-// this HoC is going to wrap my App component in app.js
+// this HoC is going to wrap my main app component
 // at the same time the HoC itself is wrapped using the connect/redux-react as it is a component
-// 'interested' in the application state (as i keep the Sidebar state as part of the app state)
-const SideMenuWrapper = (WrappedComponent) => connect(mapStateToProps, mapDispatchToProps)(SidebarHOC(WrappedComponent)); // eslint-disable-line
+// 'interested' in the application state (as i keep the SideMenu state as part of the app state)
+const sideMenuWrapper = (WrappedComponent) => connect(mapStateToProps, mapDispatchToProps)(sidebarHOC(WrappedComponent)); 
 
-module.exports = SideMenuWrapper;
+module.exports = sideMenuWrapper;

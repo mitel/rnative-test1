@@ -12,7 +12,7 @@ const promiseMiddleware = require('redux-promise');
 const createLoggerMiddleware = require('redux-logger');
 
 const reducers = require('./js/flux/reducers');
-const { TabsController, SideMenuWrapper} = require('./js/components');
+const { TabsController, sideMenuWrapper} = require('./js/components');
 
 const {
   AppRegistry,
@@ -36,7 +36,8 @@ const store = _createReduxEnhancedStore(_reducer);
 // store.dispatch(toggleSideMenu({openStatus: false}));
 // store.dispatch(toggleSideMenu({openStatus: true}));
 
-const WrappedApp = SideMenuWrapper(TabsController); // eslint-disable-line new-cap
+// HoC to wrap the TabsController
+const WrappedApp = sideMenuWrapper(TabsController); 
 
 const app = React.createClass({
   render() {
@@ -49,3 +50,5 @@ const app = React.createClass({
 });
 
 AppRegistry.registerComponent('test1', () => app);
+AppRegistry.registerComponent('main', () => app);
+

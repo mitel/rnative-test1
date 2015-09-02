@@ -25,6 +25,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		F343FB281B94A59B00A4EC88 /* react-native-icons in Resources */ = {isa = PBXBuildFile; fileRef = F343FB271B94A59B00A4EC88 /* react-native-icons */; };
 		F38D458C1B957C19002A61EB /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F38D458B1B957C19002A61EB /* libReactNativeIcons.a */; };
+		F3C6E28E1B96F33900472744 /* react-native-icons in Resources */ = {isa = PBXBuildFile; fileRef = F3C6E28D1B96F33900472744 /* react-native-icons */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		F343FB271B94A59B00A4EC88 /* react-native-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-icons"; path = "node_modules/react-native-icons"; sourceTree = "<group>"; };
 		F38D458B1B957C19002A61EB /* libReactNativeIcons.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReactNativeIcons.a; path = "node_modules/react-native-icons/ios/build/Debug-iphoneos/libReactNativeIcons.a"; sourceTree = "<group>"; };
+		F3C6E28D1B96F33900472744 /* react-native-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "react-native-icons"; path = "node_modules/react-native-icons"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				F3C6E28D1B96F33900472744 /* react-native-icons */,
 				F38D458B1B957C19002A61EB /* libReactNativeIcons.a */,
 				13B07FAE1A68108700A75B9A /* test1 */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
@@ -516,6 +519,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				F343FB281B94A59B00A4EC88 /* react-native-icons in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				F3C6E28E1B96F33900472744 /* react-native-icons in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,11 +9,14 @@ const { changeTab } = require('../flux/Actions');
 const { connect } = require('react-redux/native');
 
 function mapStateToProps(state) {
-  // returneaza un obiect { nume_reducer: 'blah' }, in cazul de fatza {currentTab: 'nume_tab'}
-  // daca state-ul ar fi mai complex si vreau sa returnez o portiune de state..
+  // returns an object { _reducer_: 'blah' }, in this case {currentTab: 'tab_name'}
+  // if the sate was more complex..
   return state; 
 }
 
+// shortcut to avoid executing 'dispatch' from JSX
+// the goTo function will be passed as props
+// 'newTab' is the name of the tab you're going to navigate to
 function mapDispatchToProps(dispatch) {
   return {
     goTo: (newTab) => dispatch(changeTab(newTab)),
