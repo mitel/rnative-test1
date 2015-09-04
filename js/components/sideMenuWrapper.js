@@ -2,7 +2,7 @@ const React = require('react-native');
 const { connect } = require('react-redux/native');
 
 const SideMenu = require('react-native-side-menu');
-const SideMenuContent = require('./SideMenuContent');
+// const SideMenuContent = require('./SideMenuContent');
 const { toggleSideMenu } = require('../flux/Actions');
 const { WallSideMenu, PeopleSideMenu, MessagingSideMenu } = require('../views');
 
