@@ -3,7 +3,8 @@
  */
 
  /*eslint-disable*/
-
+var FalcorServer = require('falcor-hapi');
+var Router = require('falcor-router');
 // import React from 'react';
 
 module.exports = [

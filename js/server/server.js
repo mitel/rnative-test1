@@ -2,9 +2,11 @@
  * Created by mitel on 01/05/15.
  */
 /*eslint-disable*/
+
 var Hapi = require('hapi');
 var Tv = require('tv');
-var routes = require('./routes/testroutes');
+var testRoutes = require('./routes/testRoutes');
+var falcorRoutes = require('./routes/falcorRoutes');
 var server = new Hapi.Server({
     connections: {
         routes: {
@@ -92,7 +94,7 @@ wss.on('connection', function connection(ws) {
 
 // append all defined routes into an array passed to server.route()
 var routes = Array.prototype.concat.apply([], [
-    routes
+    testRoutes, falcorRoutes
 ]);
 server.route(routes);
 

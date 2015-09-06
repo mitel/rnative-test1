@@ -5,6 +5,8 @@
 'use strict'; // eslint-disable-line strict
 
 const React = require('react-native');
+const falcor = require('falcor');
+const HttpDataSource = require('falcor-http-datasource');
 
 const {
   StyleSheet,
@@ -31,6 +33,14 @@ const styles = StyleSheet.create({
   },
 });
 
+const model = new falcor.Model({source: new HttpDataSource('http://localhost:8000/model.json') });
+model.
+      get('greeting').
+      then(function(response) {
+        console.log(response.json.greeting);
+      });
+
+// console.log(HttpDataSource);
 const MessagingTab = React.createClass({
   render() {
     return (

@@ -57,3 +57,5 @@ build/Release
 node_modules
 dist-server/**
 >>>>>>> 376c976c6b2410a1e5cd1910aad0c718e93a1cc2
+
+log-hapi-server.json
