@@ -2,7 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  */
-'use strict'; // eslint-disable-line strict
+// 'use strict'; // eslint-disable-line strict
 
 const React = require('react-native');
 
