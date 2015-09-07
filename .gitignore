@@ -31,6 +31,7 @@ npm-debug.log
 # Logs
 logs
 *.log
+log-hapi-server.json
 
 # Runtime data
 pids
